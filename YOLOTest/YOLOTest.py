@@ -1,5 +1,4 @@
-﻿import os
-from ultralytics import YOLO
+﻿from ultralytics import YOLO
 from tkinter.filedialog import askopenfilenames
 
 # Load an official or custom model
@@ -28,23 +27,23 @@ results = model.predict(
                     "*.webp",
                 )
             ),
-            # (
-                # "Video Files",
-                # (
-                    # "*.asf",
-                    # "*.avi",
-                    # "*.gif",
-                    # "*.m4v",
-                    # "*.mkv",
-                    # "*.mov",
-                    # "*.mp4",
-                    # "*.mpeg",
-                    # "*.mpg",
-                    # "*.ts",
-                    # "*.wmv",
-                    # "*.webm",
-                # )
-            # ),
+            (
+                "Video Files",
+                (
+                    "*.asf",
+                    "*.avi",
+                    "*.gif",
+                    "*.m4v",
+                    "*.mkv",
+                    "*.mov",
+                    "*.mp4",
+                    "*.mpeg",
+                    "*.mpg",
+                    "*.ts",
+                    "*.wmv",
+                    "*.webm",
+                )
+            ),
         )
     ),
     save_dir="results",
