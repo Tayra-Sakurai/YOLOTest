@@ -2,7 +2,7 @@
 from tkinter.filedialog import askopenfilenames
 
 # Load an official or custom model
-model = YOLO("yolov8x-oiv7.pt")
+model = YOLO("best.pt")
 
 # Perform tracking with the model
 results = model.predict(

@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>YOLOTest</Name>
     <RootNamespace>YOLOTest</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.13</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,10 +22,230 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Train.py" />
     <Compile Include="YOLOTest.py" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.13" />
+    <Folder Include="dataset\" />
+    <Folder Include="dataset\images\" />
+    <Folder Include="dataset\labels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dataset\classes.txt" />
+    <Content Include="dataset\dataset.yaml" />
+    <Content Include="dataset\images\0069949b-LINE_ALBUM_20260318_260319_66.jpg" />
+    <Content Include="dataset\images\039e5045-LINE_ALBUM_20260318_260319_76.jpg" />
+    <Content Include="dataset\images\068890f7-LINE_ALBUM_20260318_260319_93.jpg" />
+    <Content Include="dataset\images\06891f4b-LINE_ALBUM_20260318_260319_95.jpg" />
+    <Content Include="dataset\images\090b6c6e-LINE_ALBUM_20260318_260319_54.jpg" />
+    <Content Include="dataset\images\099fc60b-LINE_ALBUM_20260318_260319_55.jpg" />
+    <Content Include="dataset\images\0e597c03-LINE_ALBUM_20260318_260319_64.jpg" />
+    <Content Include="dataset\images\15a9ec6b-LINE_ALBUM_20260318_260319_47.jpg" />
+    <Content Include="dataset\images\15af9754-LINE_ALBUM_20260318_260319_83.jpg" />
+    <Content Include="dataset\images\1afce64b-LINE_ALBUM_20260318_260319_31.jpg" />
+    <Content Include="dataset\images\1e50813b-LINE_ALBUM_20260318_260319_34.jpg" />
+    <Content Include="dataset\images\1ef3cfb4-LINE_ALBUM_20260318_260319_53.jpg" />
+    <Content Include="dataset\images\1f696469-LINE_ALBUM_20260318_260319_1.jpg" />
+    <Content Include="dataset\images\20aefcbd-LINE_ALBUM_20260318_260319_11.jpg" />
+    <Content Include="dataset\images\218a1776-LINE_ALBUM_20260318_260319_92.jpg" />
+    <Content Include="dataset\images\27731fb3-LINE_ALBUM_20260318_260319_15.jpg" />
+    <Content Include="dataset\images\2baa68d3-LINE_ALBUM_20260318_260319_73.jpg" />
+    <Content Include="dataset\images\2df105e0-LINE_ALBUM_20260318_260319_48.jpg" />
+    <Content Include="dataset\images\2ea4a8a7-LINE_ALBUM_20260318_260319_24.jpg" />
+    <Content Include="dataset\images\305d1493-LINE_ALBUM_20260318_260319_100.jpg" />
+    <Content Include="dataset\images\3274407e-LINE_ALBUM_20260318_260319_28.jpg" />
+    <Content Include="dataset\images\375c7756-LINE_ALBUM_20260318_260319_58.jpg" />
+    <Content Include="dataset\images\3b6b0e5e-LINE_ALBUM_20260318_260319_6.jpg" />
+    <Content Include="dataset\images\3b8239f2-LINE_ALBUM_20260318_260319_98.jpg" />
+    <Content Include="dataset\images\3be28bbd-LINE_ALBUM_20260318_260319_9.jpg" />
+    <Content Include="dataset\images\3dc992bc-LINE_ALBUM_20260318_260319_17.jpg" />
+    <Content Include="dataset\images\3e3dad81-LINE_ALBUM_20260318_260319_69.jpg" />
+    <Content Include="dataset\images\4220654c-LINE_ALBUM_20260318_260319_13.jpg" />
+    <Content Include="dataset\images\429afc7e-LINE_ALBUM_20260318_260319_44.jpg" />
+    <Content Include="dataset\images\484203ad-LINE_ALBUM_20260318_260319_67.jpg" />
+    <Content Include="dataset\images\49ccf39d-LINE_ALBUM_20260318_260319_91.jpg" />
+    <Content Include="dataset\images\4bd6c3f1-LINE_ALBUM_20260318_260319_40.jpg" />
+    <Content Include="dataset\images\50b1b2dd-LINE_ALBUM_20260318_260319_78.jpg" />
+    <Content Include="dataset\images\537b7321-LINE_ALBUM_20260318_260319_29.jpg" />
+    <Content Include="dataset\images\54017a36-LINE_ALBUM_20260318_260319_86.jpg" />
+    <Content Include="dataset\images\542a10a9-LINE_ALBUM_20260318_260319_35.jpg" />
+    <Content Include="dataset\images\55e3fa92-LINE_ALBUM_20260318_260319_85.jpg" />
+    <Content Include="dataset\images\5dc17ebe-LINE_ALBUM_20260318_260319_52.jpg" />
+    <Content Include="dataset\images\60bf57ff-LINE_ALBUM_20260318_260319_45.jpg" />
+    <Content Include="dataset\images\624efe52-LINE_ALBUM_20260318_260319_61.jpg" />
+    <Content Include="dataset\images\644507d3-LINE_ALBUM_20260318_260319_65.jpg" />
+    <Content Include="dataset\images\67b3cbf9-LINE_ALBUM_20260318_260319_99.jpg" />
+    <Content Include="dataset\images\6ab73302-LINE_ALBUM_20260318_260319_32.jpg" />
+    <Content Include="dataset\images\6b77edd8-LINE_ALBUM_20260318_260319_22.jpg" />
+    <Content Include="dataset\images\6bcc1eb8-LINE_ALBUM_20260318_260319_80.jpg" />
+    <Content Include="dataset\images\6cd341a2-LINE_ALBUM_20260318_260319_50.jpg" />
+    <Content Include="dataset\images\6d005e16-LINE_ALBUM_20260318_260319_39.jpg" />
+    <Content Include="dataset\images\6ee8c6c3-LINE_ALBUM_20260318_260319_97.jpg" />
+    <Content Include="dataset\images\701c4d4f-LINE_ALBUM_20260318_260319_27.jpg" />
+    <Content Include="dataset\images\70d2336b-LINE_ALBUM_20260318_260319_18.jpg" />
+    <Content Include="dataset\images\710f94c5-LINE_ALBUM_20260318_260319_7.jpg" />
+    <Content Include="dataset\images\71ba8cd5-LINE_ALBUM_20260318_260319_75.jpg" />
+    <Content Include="dataset\images\74e76b36-LINE_ALBUM_20260318_260319_38.jpg" />
+    <Content Include="dataset\images\78ff94de-LINE_ALBUM_20260318_260319_82.jpg" />
+    <Content Include="dataset\images\7c49177a-LINE_ALBUM_20260318_260319_79.jpg" />
+    <Content Include="dataset\images\7c6e6cc2-LINE_ALBUM_20260318_260319_10.jpg" />
+    <Content Include="dataset\images\7c96d6fd-LINE_ALBUM_20260318_260319_59.jpg" />
+    <Content Include="dataset\images\7e0a6237-LINE_ALBUM_20260318_260319_62.jpg" />
+    <Content Include="dataset\images\7ea2caad-LINE_ALBUM_20260318_260319_23.jpg" />
+    <Content Include="dataset\images\81141b79-LINE_ALBUM_20260318_260319_2.jpg" />
+    <Content Include="dataset\images\8372a6ad-LINE_ALBUM_20260318_260319_14.jpg" />
+    <Content Include="dataset\images\854cd37c-LINE_ALBUM_20260318_260319_21.jpg" />
+    <Content Include="dataset\images\885360b7-LINE_ALBUM_20260318_260319_12.jpg" />
+    <Content Include="dataset\images\8c9570a7-LINE_ALBUM_20260318_260319_71.jpg" />
+    <Content Include="dataset\images\8db409b5-LINE_ALBUM_20260318_260319_94.jpg" />
+    <Content Include="dataset\images\8f0ef239-LINE_ALBUM_20260318_260319_46.jpg" />
+    <Content Include="dataset\images\8ffd5d39-LINE_ALBUM_20260318_260319_68.jpg" />
+    <Content Include="dataset\images\90b32a8e-LINE_ALBUM_20260318_260319_5.jpg" />
+    <Content Include="dataset\images\90d8f169-LINE_ALBUM_20260318_260319_63.jpg" />
+    <Content Include="dataset\images\91fc1b80-LINE_ALBUM_20260318_260319_88.jpg" />
+    <Content Include="dataset\images\924df3d3-LINE_ALBUM_20260318_260319_20.jpg" />
+    <Content Include="dataset\images\93c55ad2-LINE_ALBUM_20260318_260319_16.jpg" />
+    <Content Include="dataset\images\987b63a0-LINE_ALBUM_20260318_260319_4.jpg" />
+    <Content Include="dataset\images\99e1cff4-LINE_ALBUM_20260318_260319_36.jpg" />
+    <Content Include="dataset\images\9a227a47-LINE_ALBUM_20260318_260319_41.jpg" />
+    <Content Include="dataset\images\b33f90b3-LINE_ALBUM_20260318_260319_60.jpg" />
+    <Content Include="dataset\images\b37bdd84-LINE_ALBUM_20260318_260319_70.jpg" />
+    <Content Include="dataset\images\baf5c0b7-LINE_ALBUM_20260318_260319_57.jpg" />
+    <Content Include="dataset\images\c6f1bf9e-LINE_ALBUM_20260318_260319_56.jpg" />
+    <Content Include="dataset\images\c92e27a1-LINE_ALBUM_20260318_260319_81.jpg" />
+    <Content Include="dataset\images\c9568595-LINE_ALBUM_20260318_260319_37.jpg" />
+    <Content Include="dataset\images\cad8d6f4-LINE_ALBUM_20260318_260319_43.jpg" />
+    <Content Include="dataset\images\ccfbc4b0-LINE_ALBUM_20260318_260319_26.jpg" />
+    <Content Include="dataset\images\ce654a9d-LINE_ALBUM_20260318_260319_33.jpg" />
+    <Content Include="dataset\images\ce667cc0-LINE_ALBUM_20260318_260319_30.jpg" />
+    <Content Include="dataset\images\cf8bdc8d-LINE_ALBUM_20260318_260319_96.jpg" />
+    <Content Include="dataset\images\d6807ad7-LINE_ALBUM_20260318_260319_74.jpg" />
+    <Content Include="dataset\images\d68ac8c1-LINE_ALBUM_20260318_260319_84.jpg" />
+    <Content Include="dataset\images\d7e1a8b3-LINE_ALBUM_20260318_260319_89.jpg" />
+    <Content Include="dataset\images\da1c5083-LINE_ALBUM_20260318_260319_51.jpg" />
+    <Content Include="dataset\images\df03ca7b-LINE_ALBUM_20260318_260319_42.jpg" />
+    <Content Include="dataset\images\df7981e6-LINE_ALBUM_20260318_260319_90.jpg" />
+    <Content Include="dataset\images\e01e87e9-LINE_ALBUM_20260318_260319_87.jpg" />
+    <Content Include="dataset\images\e161073d-LINE_ALBUM_20260318_260319_8.jpg" />
+    <Content Include="dataset\images\e8696b43-LINE_ALBUM_20260318_260319_49.jpg" />
+    <Content Include="dataset\images\ea20425f-LINE_ALBUM_20260318_260319_3.jpg" />
+    <Content Include="dataset\images\ea7cd536-LINE_ALBUM_20260318_260319_19.jpg" />
+    <Content Include="dataset\images\f122ad44-LINE_ALBUM_20260318_260319_77.jpg" />
+    <Content Include="dataset\images\f4204a75-LINE_ALBUM_20260318_260319_72.jpg" />
+    <Content Include="dataset\images\fc45938b-LINE_ALBUM_20260318_260319_25.jpg" />
+    <Content Include="dataset\labels\0069949b-LINE_ALBUM_20260318_260319_66.txt" />
+    <Content Include="dataset\labels\039e5045-LINE_ALBUM_20260318_260319_76.txt" />
+    <Content Include="dataset\labels\068890f7-LINE_ALBUM_20260318_260319_93.txt" />
+    <Content Include="dataset\labels\06891f4b-LINE_ALBUM_20260318_260319_95.txt" />
+    <Content Include="dataset\labels\090b6c6e-LINE_ALBUM_20260318_260319_54.txt" />
+    <Content Include="dataset\labels\099fc60b-LINE_ALBUM_20260318_260319_55.txt" />
+    <Content Include="dataset\labels\0e597c03-LINE_ALBUM_20260318_260319_64.txt" />
+    <Content Include="dataset\labels\15a9ec6b-LINE_ALBUM_20260318_260319_47.txt" />
+    <Content Include="dataset\labels\15af9754-LINE_ALBUM_20260318_260319_83.txt" />
+    <Content Include="dataset\labels\1afce64b-LINE_ALBUM_20260318_260319_31.txt" />
+    <Content Include="dataset\labels\1e50813b-LINE_ALBUM_20260318_260319_34.txt" />
+    <Content Include="dataset\labels\1ef3cfb4-LINE_ALBUM_20260318_260319_53.txt" />
+    <Content Include="dataset\labels\1f696469-LINE_ALBUM_20260318_260319_1.txt" />
+    <Content Include="dataset\labels\20aefcbd-LINE_ALBUM_20260318_260319_11.txt" />
+    <Content Include="dataset\labels\218a1776-LINE_ALBUM_20260318_260319_92.txt" />
+    <Content Include="dataset\labels\27731fb3-LINE_ALBUM_20260318_260319_15.txt" />
+    <Content Include="dataset\labels\2baa68d3-LINE_ALBUM_20260318_260319_73.txt" />
+    <Content Include="dataset\labels\2df105e0-LINE_ALBUM_20260318_260319_48.txt" />
+    <Content Include="dataset\labels\2ea4a8a7-LINE_ALBUM_20260318_260319_24.txt" />
+    <Content Include="dataset\labels\305d1493-LINE_ALBUM_20260318_260319_100.txt" />
+    <Content Include="dataset\labels\3274407e-LINE_ALBUM_20260318_260319_28.txt" />
+    <Content Include="dataset\labels\375c7756-LINE_ALBUM_20260318_260319_58.txt" />
+    <Content Include="dataset\labels\3b6b0e5e-LINE_ALBUM_20260318_260319_6.txt" />
+    <Content Include="dataset\labels\3b8239f2-LINE_ALBUM_20260318_260319_98.txt" />
+    <Content Include="dataset\labels\3be28bbd-LINE_ALBUM_20260318_260319_9.txt" />
+    <Content Include="dataset\labels\3dc992bc-LINE_ALBUM_20260318_260319_17.txt" />
+    <Content Include="dataset\labels\3e3dad81-LINE_ALBUM_20260318_260319_69.txt" />
+    <Content Include="dataset\labels\4220654c-LINE_ALBUM_20260318_260319_13.txt" />
+    <Content Include="dataset\labels\429afc7e-LINE_ALBUM_20260318_260319_44.txt" />
+    <Content Include="dataset\labels\484203ad-LINE_ALBUM_20260318_260319_67.txt" />
+    <Content Include="dataset\labels\49ccf39d-LINE_ALBUM_20260318_260319_91.txt" />
+    <Content Include="dataset\labels\4bd6c3f1-LINE_ALBUM_20260318_260319_40.txt" />
+    <Content Include="dataset\labels\50b1b2dd-LINE_ALBUM_20260318_260319_78.txt" />
+    <Content Include="dataset\labels\537b7321-LINE_ALBUM_20260318_260319_29.txt" />
+    <Content Include="dataset\labels\54017a36-LINE_ALBUM_20260318_260319_86.txt" />
+    <Content Include="dataset\labels\542a10a9-LINE_ALBUM_20260318_260319_35.txt" />
+    <Content Include="dataset\labels\55e3fa92-LINE_ALBUM_20260318_260319_85.txt" />
+    <Content Include="dataset\labels\5dc17ebe-LINE_ALBUM_20260318_260319_52.txt" />
+    <Content Include="dataset\labels\60bf57ff-LINE_ALBUM_20260318_260319_45.txt" />
+    <Content Include="dataset\labels\624efe52-LINE_ALBUM_20260318_260319_61.txt" />
+    <Content Include="dataset\labels\644507d3-LINE_ALBUM_20260318_260319_65.txt" />
+    <Content Include="dataset\labels\67b3cbf9-LINE_ALBUM_20260318_260319_99.txt" />
+    <Content Include="dataset\labels\6ab73302-LINE_ALBUM_20260318_260319_32.txt" />
+    <Content Include="dataset\labels\6b77edd8-LINE_ALBUM_20260318_260319_22.txt" />
+    <Content Include="dataset\labels\6bcc1eb8-LINE_ALBUM_20260318_260319_80.txt" />
+    <Content Include="dataset\labels\6cd341a2-LINE_ALBUM_20260318_260319_50.txt" />
+    <Content Include="dataset\labels\6d005e16-LINE_ALBUM_20260318_260319_39.txt" />
+    <Content Include="dataset\labels\6ee8c6c3-LINE_ALBUM_20260318_260319_97.txt" />
+    <Content Include="dataset\labels\701c4d4f-LINE_ALBUM_20260318_260319_27.txt" />
+    <Content Include="dataset\labels\70d2336b-LINE_ALBUM_20260318_260319_18.txt" />
+    <Content Include="dataset\labels\710f94c5-LINE_ALBUM_20260318_260319_7.txt" />
+    <Content Include="dataset\labels\71ba8cd5-LINE_ALBUM_20260318_260319_75.txt" />
+    <Content Include="dataset\labels\74e76b36-LINE_ALBUM_20260318_260319_38.txt" />
+    <Content Include="dataset\labels\78ff94de-LINE_ALBUM_20260318_260319_82.txt" />
+    <Content Include="dataset\labels\7c49177a-LINE_ALBUM_20260318_260319_79.txt" />
+    <Content Include="dataset\labels\7c6e6cc2-LINE_ALBUM_20260318_260319_10.txt" />
+    <Content Include="dataset\labels\7c96d6fd-LINE_ALBUM_20260318_260319_59.txt" />
+    <Content Include="dataset\labels\7e0a6237-LINE_ALBUM_20260318_260319_62.txt" />
+    <Content Include="dataset\labels\7ea2caad-LINE_ALBUM_20260318_260319_23.txt" />
+    <Content Include="dataset\labels\81141b79-LINE_ALBUM_20260318_260319_2.txt" />
+    <Content Include="dataset\labels\8372a6ad-LINE_ALBUM_20260318_260319_14.txt" />
+    <Content Include="dataset\labels\854cd37c-LINE_ALBUM_20260318_260319_21.txt" />
+    <Content Include="dataset\labels\885360b7-LINE_ALBUM_20260318_260319_12.txt" />
+    <Content Include="dataset\labels\8c9570a7-LINE_ALBUM_20260318_260319_71.txt" />
+    <Content Include="dataset\labels\8db409b5-LINE_ALBUM_20260318_260319_94.txt" />
+    <Content Include="dataset\labels\8f0ef239-LINE_ALBUM_20260318_260319_46.txt" />
+    <Content Include="dataset\labels\8ffd5d39-LINE_ALBUM_20260318_260319_68.txt" />
+    <Content Include="dataset\labels\90b32a8e-LINE_ALBUM_20260318_260319_5.txt" />
+    <Content Include="dataset\labels\90d8f169-LINE_ALBUM_20260318_260319_63.txt" />
+    <Content Include="dataset\labels\91fc1b80-LINE_ALBUM_20260318_260319_88.txt" />
+    <Content Include="dataset\labels\924df3d3-LINE_ALBUM_20260318_260319_20.txt" />
+    <Content Include="dataset\labels\93c55ad2-LINE_ALBUM_20260318_260319_16.txt" />
+    <Content Include="dataset\labels\987b63a0-LINE_ALBUM_20260318_260319_4.txt" />
+    <Content Include="dataset\labels\99e1cff4-LINE_ALBUM_20260318_260319_36.txt" />
+    <Content Include="dataset\labels\9a227a47-LINE_ALBUM_20260318_260319_41.txt" />
+    <Content Include="dataset\labels\b33f90b3-LINE_ALBUM_20260318_260319_60.txt" />
+    <Content Include="dataset\labels\b37bdd84-LINE_ALBUM_20260318_260319_70.txt" />
+    <Content Include="dataset\labels\baf5c0b7-LINE_ALBUM_20260318_260319_57.txt" />
+    <Content Include="dataset\labels\c6f1bf9e-LINE_ALBUM_20260318_260319_56.txt" />
+    <Content Include="dataset\labels\c92e27a1-LINE_ALBUM_20260318_260319_81.txt" />
+    <Content Include="dataset\labels\c9568595-LINE_ALBUM_20260318_260319_37.txt" />
+    <Content Include="dataset\labels\cad8d6f4-LINE_ALBUM_20260318_260319_43.txt" />
+    <Content Include="dataset\labels\ccfbc4b0-LINE_ALBUM_20260318_260319_26.txt" />
+    <Content Include="dataset\labels\ce654a9d-LINE_ALBUM_20260318_260319_33.txt" />
+    <Content Include="dataset\labels\ce667cc0-LINE_ALBUM_20260318_260319_30.txt" />
+    <Content Include="dataset\labels\cf8bdc8d-LINE_ALBUM_20260318_260319_96.txt" />
+    <Content Include="dataset\labels\d6807ad7-LINE_ALBUM_20260318_260319_74.txt" />
+    <Content Include="dataset\labels\d68ac8c1-LINE_ALBUM_20260318_260319_84.txt" />
+    <Content Include="dataset\labels\d7e1a8b3-LINE_ALBUM_20260318_260319_89.txt" />
+    <Content Include="dataset\labels\da1c5083-LINE_ALBUM_20260318_260319_51.txt" />
+    <Content Include="dataset\labels\df03ca7b-LINE_ALBUM_20260318_260319_42.txt" />
+    <Content Include="dataset\labels\df7981e6-LINE_ALBUM_20260318_260319_90.txt" />
+    <Content Include="dataset\labels\e01e87e9-LINE_ALBUM_20260318_260319_87.txt" />
+    <Content Include="dataset\labels\e161073d-LINE_ALBUM_20260318_260319_8.txt" />
+    <Content Include="dataset\labels\e8696b43-LINE_ALBUM_20260318_260319_49.txt" />
+    <Content Include="dataset\labels\ea20425f-LINE_ALBUM_20260318_260319_3.txt" />
+    <Content Include="dataset\labels\ea7cd536-LINE_ALBUM_20260318_260319_19.txt" />
+    <Content Include="dataset\labels\f122ad44-LINE_ALBUM_20260318_260319_77.txt" />
+    <Content Include="dataset\labels\f4204a75-LINE_ALBUM_20260318_260319_72.txt" />
+    <Content Include="dataset\labels\fc45938b-LINE_ALBUM_20260318_260319_25.txt" />
+    <Content Include="dataset\notes.json" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.14</Version>
+      <Description>env (Python 3.14.3)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

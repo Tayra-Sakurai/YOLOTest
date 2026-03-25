@@ -1,0 +1,7 @@
+﻿path: .
+
+train: "dataset/images/"
+val: "dataset/images/"
+
+names:
+  0: "goldfish"  
